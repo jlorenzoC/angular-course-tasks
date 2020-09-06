@@ -1,0 +1,82 @@
+<div class="margin">
+  <button (click)="toggleSecretInfo()" class="btn btn-default" type="button">
+    <div *ngIf="!getShow">
+      <span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>
+      Display detail
+    </div>
+    <div *ngIf="getShow">
+      <span aria-hidden="true" class="glyphicon glyphicon-eye-close"></span>
+      Hide detail
+    </div>
+  </button>
+  <a
+    *ngIf="getDates.length > 2"
+    [href]="'#' + getDates.length"
+    class="btn btn-default"
+    id=""
+    name=""
+    role="button"
+  ><span class="glyphicon glyphicon-chevron-down"></span
+  ></a>
+  <button
+    (click)="setDates = []"
+    *ngIf="getDates.length > 0"
+    class="btn btn-danger"
+    type="button"
+  >
+    <span aria-hidden="true" class="glyphicon glyphicon-trash"></span>
+    {{ getDates.length > 1 ? 'All' : '' }}
+  </button>
+</div>
+<br/>
+<br/>
+<h4
+  *ngIf="getShow"
+  style="
+    padding: 25px 10px;
+    border-radius: 5px;
+    background-color: #8eb5ff;
+    color: white;
+  "
+>
+  Secret info! 😱 uuh!
+</h4>
+<br/>
+<br/>
+<div
+  *ngFor="let date of getDates; let index = index"
+  [id]="index + 1"
+  [ngClass]="{ date: index > 3 }"
+  [ngStyle]="{
+    color: index > 3 ? 'white' : 'grey',
+    border: '1px solid grey',
+    borderRadius: '5px',
+    margin: '10px 0px'
+  }"
+  class="card"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8" style="display: flex;">
+        <h4 style="margin: 10px;">{{ index + 1 }}.</h4>
+        <div class="card-body">
+          <h4 class="card-title">{{ date }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <span class="h2" style="float: right;">
+          <span class="glyphicon glyphicon-calendar"></span
+          ></span>
+      </div>
+      <div class="col-lg-1">
+        <button
+          (click)="deleteDate(index)"
+          class="btn btn-danger h2"
+          type="button"
+        >
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
