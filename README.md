@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 ## Deployment site
-You can visit the page at [GitHub Pages](https://jlorenzoc.github.io/angular-course-tasks/)
+You can visit the page [here](https://jlorenzoc.github.io/angular-course-tasks/), hosted by [GitHub Pages](https://pages.github.com).
 
 ## Development server
 
