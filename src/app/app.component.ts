@@ -43,7 +43,7 @@ export class AppComponent implements DoCheck {
       case 1:
         this.assigmentTitle = 'Understanding how Databindings work';
         break;
-      case 1:
+      case 2:
         this.assigmentTitle = 'Understanding how Directives work';
         break;
       default:
