@@ -36,7 +36,7 @@ export class AppComponent implements DoCheck {
   }
 
   set setAssigmentTitle(topic: string) {
-    this.assigmentTitle = 'Understanding how ' + topic + 'work';
+    this.assigmentTitle = 'Understanding how ' + topic + ' work';
   }
 
   ngDoCheck(): void {
