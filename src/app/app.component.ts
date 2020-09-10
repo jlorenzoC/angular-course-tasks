@@ -35,16 +35,20 @@ export class AppComponent implements DoCheck {
     return this.tabs;
   }
 
+  set setAssigmentTitle(topic: string) {
+    this.assigmentTitle = 'Understanding how ' + topic + 'work';
+  }
+
   ngDoCheck(): void {
     switch (this.getTabActive) {
       case 0:
-        this.assigmentTitle = 'Understanding how Components work';
+        this.setAssigmentTitle = 'Components';
         break;
       case 1:
-        this.assigmentTitle = 'Understanding how Databindings work';
+        this.setAssigmentTitle = 'Databindings';
         break;
       case 2:
-        this.assigmentTitle = 'Understanding how Directives work';
+        this.setAssigmentTitle = 'Directives';
         break;
       default:
         break;
