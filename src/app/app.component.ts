@@ -40,18 +40,6 @@ export class AppComponent implements DoCheck {
   }
 
   ngDoCheck(): void {
-    switch (this.getTabActive) {
-      case 0:
-        this.setAssigmentTitle = 'Components';
-        break;
-      case 1:
-        this.setAssigmentTitle = 'Databindings';
-        break;
-      case 2:
-        this.setAssigmentTitle = 'Directives';
-        break;
-      default:
-        break;
-    }
+    this.setAssigmentTitle = this.tabs[this.getTabActive];
   }
 }
